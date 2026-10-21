@@ -8,6 +8,17 @@ This project runs a local Kubernetes cluster, deploys an app using Helm, exposes
 - Learn how to control traffic between Pods with NetworkPolicy
 - Learn why GitOps makes deployments easier to track and roll back
 - Get comfortable with Docker, Linux and Git
+## Quick start
+
+    colima start --cpu 2 --memory 4
+    k3d cluster create homelab --agents 1 -p "8080:80@loadbalancer"
+    kubectl get nodes
+
+Stop / start / delete:
+
+    k3d cluster stop homelab && colima stop
+    colima start && k3d cluster start homelab
+    k3d cluster delete homelab
 ## Progress
 - [ ] Phase 0: Setup
 - [ ] Phase 1: Containerize the app

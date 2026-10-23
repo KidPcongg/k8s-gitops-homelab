@@ -20,8 +20,8 @@ Stop / start / delete:
     colima start && k3d cluster start homelab
     k3d cluster delete homelab
 ## Progress
-- [ ] Phase 0: Setup
-- [ ] Phase 1: Containerize the app
+- [x] Phase 0: Setup
+- [x] Phase 1: Containerize the app
 - [ ] Phase 2: Kubernetes basics
 - [ ] Phase 3: Ingress and database
 - [ ] Phase 4: Helm

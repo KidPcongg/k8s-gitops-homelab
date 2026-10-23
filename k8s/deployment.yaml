@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: shortlink
+  namespace: shortlink
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shortlink
+  template:
+    metadata:
+      labels:
+        app: shortlink
+    spec:
+      containers:
+        - name: app
+          image: shortlink:v4
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000

@@ -9,4 +9,7 @@ COPY app.py .
 
 EXPOSE 8000
 
-CMD ["python", "app.py"]
+RUN useradd --uid 10001 --no-create-home appuser
+USER appuser
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "app:app"]

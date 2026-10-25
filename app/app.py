@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import socket
 import datetime
+import os
 
 app = Flask(__name__)
 
@@ -14,7 +15,7 @@ def healthz():
 
 @app.get("/api/info")
 def info():
-    return jsonify(hostname=socket.gethostname())
+    return jsonify(hostname=socket.gethostname(), version=os.environ.get("APP_VERSION", "dev"),)
 
 @app.get("/api/time")
 def get_time():

@@ -15,8 +15,11 @@ spec:
     spec:
       containers:
         - name: app
-          image: shortlink:v4
+          image: shortlink:v5
           imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: shortlink-config
           ports:
             - containerPort: 8000
           livenessProbe:

@@ -22,7 +22,7 @@ Stop / start / delete:
 ## Progress
 - [x] Phase 0: Setup
 - [x] Phase 1: Containerize the app
-- [ ] Phase 2: Kubernetes basics
+- [x] Phase 2: Kubernetes basics
 - [ ] Phase 3: Ingress and database
 - [ ] Phase 4: Helm
 - [ ] Phase 5: NetworkPolicy

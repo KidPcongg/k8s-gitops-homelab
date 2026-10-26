@@ -14,10 +14,10 @@ This project runs a local Kubernetes cluster, deploys an app using Helm, exposes
     k3d cluster create homelab --agents 1 -p "8080:80@loadbalancer"
     kubectl get nodes
 
-Stop / start / delete:
+Start / stop / delete:
 
-    k3d cluster stop homelab && colima stop
     colima start && k3d cluster start homelab
+    k3d cluster stop homelab && colima stop
     k3d cluster delete homelab
 ## Progress
 - [x] Phase 0: Setup

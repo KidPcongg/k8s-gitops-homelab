@@ -4,4 +4,7 @@ metadata:
   name: shortlink-config
   namespace: shortlink
 data:
-  APP_VERSION: "1.1.0"
+  APP_VERSION: "1.2.0"
+  DB_HOST: "postgres"
+  DB_NAME: "postgres"
+  DB_USER: "postgres"

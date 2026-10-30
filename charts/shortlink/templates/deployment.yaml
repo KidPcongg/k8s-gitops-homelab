@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: shortlink
-  namespace: shortlink
 spec: 
-  replicas: 2
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: shortlink
@@ -15,16 +14,16 @@ spec:
     spec:
       containers:
         - name: app
-          image: shortlink:v6
-          imagePullPolicy: IfNotPresent
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: shortlink-config
+                name: shortlink-config             
           env:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: {{ .Values.db.secretName }} 
                   key: POSTGRES_PASSWORD
           ports:
             - containerPort: 8000
@@ -40,9 +39,4 @@ spec:
               port: 8000
             periodSeconds: 5
           resources:
-            requests:
-              cpu: 50m
-              memory: 64Mi
-            limits:
-              cpu: 200m
-              memory: 128Mi
+            {{- toYaml .Values.resources | nindent 12 }}

@@ -2,11 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: shortlink
-  namespace: shortlink
+
 spec:
   ingressClassName: traefik
   rules:
-    - host: shortlink.localhost
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /

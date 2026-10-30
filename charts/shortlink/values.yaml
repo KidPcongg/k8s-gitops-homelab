@@ -1,0 +1,25 @@
+replicaCount: 3
+
+image:
+  repository: shortlink
+  tag: v6
+  pullPolicy: IfNotPresent
+
+appVersion: "1.3.0"
+
+db:
+  host: postgres
+  name: postgres
+  user: postgres
+  secretName: postgres-secret
+
+ingress:
+  host: shortlink.localhost
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi

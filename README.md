@@ -26,6 +26,6 @@ Start / stop / delete:
 - [x] Phase 3: Ingress and database
 - [x] Phase 4: Helm
 - [x] Phase 5: NetworkPolicy
-- [ ] Phase 6: CI and GitOps
+- [x] Phase 6: CI and GitOps
 - [ ] Phase 7: Autoscaling and docs
  

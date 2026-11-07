@@ -1,4 +1,7 @@
 replicaCount: 3
+image:
+  repository: ghcr.io/kidpcongg/shortlink
+  tag: 2678333e9fe2203fa59fbcd641b3513831b69ba3
 resources:
   requests:
     cpu: 100m

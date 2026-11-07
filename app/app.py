@@ -1,4 +1,3 @@
-from flask import Flask, jsonify, request, redirect, abort
 import datetime
 import os
 import secrets
@@ -6,6 +5,7 @@ import socket
 import string
 
 import psycopg
+from flask import Flask, abort, jsonify, redirect, request
 
 app = Flask(__name__)
 ALPHABET = string.ascii_letters + string.digits
